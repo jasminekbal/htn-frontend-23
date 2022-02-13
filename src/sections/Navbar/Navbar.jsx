@@ -9,7 +9,7 @@ const NavBar = ({isLoggedIn, dispatch}) => {
     function login() {
         let username = document.getElementById("username-input").value
         let password = document.getElementById("password-input").value
-        if (username == "name" && password=="abc123") {
+        if (username === "name" && password==="abc123") {
             setLoginState({showError: false, showLogin: false})
             dispatch({type: ACTIONS.LOGIN})
         } else {
@@ -25,7 +25,7 @@ const NavBar = ({isLoggedIn, dispatch}) => {
     return (
         <div>
             <div className="navbar-wrapper">
-                <img className="navbar-logo" src={globe}/>
+                <img className="navbar-logo" alt="" src={globe}/>
                 {
                     isLoggedIn? <div className="navbar-login-text"> Hello, name | <span onClick={()=> logout()}> Logout </span></div> :
                     <div onClick={()=> setLoginState({...loginState, showLogin: true})} className="navbar-login-text">

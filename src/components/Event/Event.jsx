@@ -38,11 +38,13 @@ const Event = ({event, isLoggedIn, dispatch}) => {
     const getEventImage = () => {
         switch (event.type){
             case EVENT_TYPES.ACTIVITY:
-                return <img src={activity} className="event-type-icon"/>
+                return <img src={activity} alt="" className="event-type-icon"/>
             case EVENT_TYPES.WORKSHOP:
-                return <img src={workshop} className="event-type-icon"/>
+                return <img src={workshop}alt="" className="event-type-icon"/>
             case EVENT_TYPES.TECH_TALK:
-                return <img src={techTalk} className="event-type-icon"/>
+                return <img src={techTalk} alt="" className="event-type-icon"/>
+            default:
+                return <></>
         } 
     }
 
@@ -59,19 +61,19 @@ const Event = ({event, isLoggedIn, dispatch}) => {
                     </div>
                 </div>
             
-                {event.liked && isLoggedIn ? <img onClick={() => dispatch({type: ACTIONS.TOGGLE_LIKED, payload:{id: event.id}}) } src={heartFull} className="event-heart"/>:
-                isLoggedIn && <img src={heartEmpty} onClick={() => dispatch({type: ACTIONS.TOGGLE_LIKED, payload:{id: event.id}}) } className="event-heart"/>}
+                {event.liked && isLoggedIn ? <img onClick={() => dispatch({type: ACTIONS.TOGGLE_LIKED, payload:{id: event.id}}) } src={heartFull} alt="" className="event-heart"/>:
+                isLoggedIn && <img src={heartEmpty} alt="" onClick={() => dispatch({type: ACTIONS.TOGGLE_LIKED, payload:{id: event.id}}) } className="event-heart"/>}
             </div>
 
             <div className="event-links">
                 
-               { event.isPublic && <a target="_blank" className="event-link" href={`${event.youtubeLink}`}>
-                    <img src={youtube} className="event-link-image"/>
+               { event.isPublic && <a target="_blank" rel="noreferrer" className="event-link" href={`${event.youtubeLink}`}>
+                    <img src={youtube} alt="" className="event-link-image"/>
                     Youtube Link
                 </a>}
 
-                { isLoggedIn && <a className="event-link" target="_blank" href={`${event.hopinEvent}`}>
-                    <img src={calender} className="event-link-image"/>
+                { isLoggedIn && <a className="event-link" target="_blank" rel="noreferrer" href={`${event.hopinEvent}`}>
+                    <img src={calender} alt="" className="event-link-image"/>
                     Hopin Event
                 </a>}
 

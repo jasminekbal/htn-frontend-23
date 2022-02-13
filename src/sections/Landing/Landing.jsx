@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import "./Landing.scss";
 import activity from "../../resources/images/activity.svg"
 import techTalk from "../../resources/images/techtalk.svg"
@@ -30,11 +30,11 @@ const Landing = ({state, dispatch}) => {
     }
 
     function filterEventType (eventType) {
-        if (eventType == EVENT_TYPES.ACTIVITY) {
+        if (eventType === EVENT_TYPES.ACTIVITY) {
             dispatch({type: ACTIONS.TOGGLE_FILTER_ACTIVITY})
-        } else if (eventType == EVENT_TYPES.TECH_TALK) {
+        } else if (eventType === EVENT_TYPES.TECH_TALK) {
             dispatch({type: ACTIONS.TOGGLE_FILTER_TECH_TALK})
-        } else if (eventType == EVENT_TYPES.WORKSHOP) {
+        } else if (eventType === EVENT_TYPES.WORKSHOP) {
             dispatch({type: ACTIONS.TOGGLE_FILTER_WORKSHOP})
         }
         dispatch({type: ACTIONS.FILTER})
@@ -61,15 +61,15 @@ const Landing = ({state, dispatch}) => {
 
             <div className="landing-event-filters">
                 <div className={`${techTalkClassName}`} onClick={()=> filterEventType(EVENT_TYPES.TECH_TALK)}>
-                    <img src={techTalk}  className="landing-event-type-img"/>
+                    <img src={techTalk}  alt="" className="landing-event-type-img"/>
                     Tech Talk
                 </div>
                 <div className={`${activityClassName}`} onClick={()=> filterEventType(EVENT_TYPES.ACTIVITY)}>
-                    <img src={activity} className="landing-event-type-img"/>
+                    <img src={activity} alt="" className="landing-event-type-img"/>
                     Activity
                 </div>
                 <div className={`${workshopClassName}`} onClick={()=> filterEventType(EVENT_TYPES.WORKSHOP)}>
-                    <img src={workshop}  className="landing-event-type-img"/>
+                    <img src={workshop} alt="" className="landing-event-type-img"/>
                     Workshop
                 </div>
             </div>

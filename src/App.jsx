@@ -39,7 +39,7 @@ function App() {
           type: result["event_type"],
           startTime: result["start_time"],
           endTime: result["end_time"],
-          isPublic: result["permission"] == "public",
+          isPublic: result["permission"] === "public",
           youtubeLink: result["public_url"],
           hopinEvent: result["private_url"],
           description: result["description"],

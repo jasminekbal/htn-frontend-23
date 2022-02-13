@@ -28,6 +28,8 @@ export const ACTIONS = {
           return !state.filterOutWorkshop
       case EVENT_TYPES.TECH_TALK:
           return !state.filterOutTechTalk
+      default:
+        return true
     } 
   }
   
@@ -47,7 +49,7 @@ export const ACTIONS = {
   // to toggle the liked state on a given event
   function toggleLike (allEvents, eventId) {
     return allEvents.map(event => { 
-      if (event.id == eventId) {
+      if (event.id === eventId) {
         return {...event, liked: !event.liked}
       }
       return event
@@ -79,6 +81,8 @@ export const ACTIONS = {
             filterOutTechTalk:false, filterOutWorkshop: false}
       case ACTIONS.TOGGLE_LIKED:
         return {...state, allSortedEvents: toggleLike(state.allSortedEvents, action.payload.id), eventsToDisplay:toggleLike(state.eventsToDisplay, action.payload.id)}
+      default:
+        return state
     } 
   }
   
