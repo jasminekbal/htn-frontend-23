@@ -6,7 +6,7 @@ import {reducer, ACTIONS} from "./utils.js"
 
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, {isLoggedIn: true,
+  const [state, dispatch] = useReducer(reducer, {isLoggedIn: false,
     filterOutTechTalk: false,
     filterOutActivity: false,
     filterOutWorkshop: false,
