@@ -1,0 +1,40 @@
+// Getting and defining font
+@mixin fontType($name, $file, $weight: normal, $style: normal) {
+    @font-face {
+        font-weight: $weight;
+        font-family: "#{$name}";
+        font-style: $style;
+        src: url("./resources/fonts/#{$file}.ttf") format("truetype");
+    }
+}
+
+@include fontType("Lexend", "Lexend/Lexend-Medium");
+@include fontType("Quicksand", "Quicksand/static/Quicksand-Regular");
+@include fontType("Quicksand Medium", "Quicksand/static/Quicksand-Medium");
+@include fontType("Quicksand Semibold", "Quicksand/static/Quicksand-SemiBold");
+
+// Color Scheme
+$nav-pink: #FFD8D8;
+$dark-blue: #1C428A;
+$event-pink: #FFEDED;
+$background: #FFFDF8;
+$dark-pink: #FF5B72;
+$input-fill: #F8F9F8;
+$input-shadow: rgba(0, 178, 202, 0.43);
+
+
+// to help make responsiveness easier
+$width-sm-max: 650px;
+$width-md-max: 900px;
+
+@mixin phone {
+    @media (max-width: #{$width-sm-max}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$width-md-max}) {
+        @content;
+    }
+}

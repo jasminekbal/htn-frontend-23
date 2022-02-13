@@ -1,0 +1,93 @@
+@import "./constants";
+
+.App {
+    text-align: center;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: $background;
+}
+
+h1 {
+    font-family: "Lexend";
+    font-size: 72px;
+    margin: 0 0 0 0;
+    @include phone {
+        font-size: 28px;
+    }
+}
+
+h3 {
+    font-family: "Lexend";
+    font-size: 36px;
+    @include phone {
+        font-size: 18px;
+    }
+}
+
+.filled-pink-btn{
+    background: $dark-pink;
+    border-radius: 20px;
+    width: 202px;
+    height: 48px;
+    font-size: 28px;
+    font-family: "Quicksand";
+    color: white;
+    text-align: center;
+    line-height: 48px;
+    margin: 16px;
+    cursor: pointer;
+    @include phone {
+        font-size: 18px;
+        width: 130px;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+.empty-pink-btn{
+    background: white;
+    border-radius: 20px;
+    border: 4px solid $dark-pink;
+    width: 202px;
+    height: 40px;
+    font-size: 28px;
+    font-family: "Quicksand";
+    color: $dark-pink;
+    text-align: center;
+    line-height: 40px;
+    margin: 16px;
+    cursor: pointer;
+    @include phone {
+        font-size: 18px;
+        width: 130px;
+        height: 22px;
+        line-height: 22px;
+    }
+}
+
+input{
+    background: $input-fill;
+    box-shadow: 0px 4px 4px $input-shadow;
+    border-radius: 10px;
+    border: none;
+    font-family: "Quicksand Medium";
+    text-align: center;
+}
+
+.filled-blue-btn {
+    width: 85px;
+    height: 24px;
+    background: $dark-blue;
+    border-radius: 10px;
+    color: white;
+    line-height: 24px;
+    font-family: "Quicksand Medium";
+    font-size: 18px;
+    cursor: pointer;
+}

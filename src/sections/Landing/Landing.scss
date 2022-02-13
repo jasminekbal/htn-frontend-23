@@ -1,0 +1,101 @@
+@import "../../constants";
+
+.landing{
+    &-wrapper {
+        margin-top: 70px;
+        padding-top: 10%;
+        padding-bottom: 200px;
+    }
+   
+    &-search-bar{
+        font-weight: 500;
+        font-size: 28px;    
+        margin-bottom: 16px;
+        width: 653px;
+        height: 54px;
+        @include phone {
+            width: 300px;
+            font-size: 14px;
+            height: 30px;
+        }
+    }
+
+    &-event-btns{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-event-filters{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 60%;
+        margin-left: 20%;
+        @include phone {
+            width: 100%;
+            margin-left: 0%;
+        }
+        @include tablet {
+            width: 80%;
+            margin-left: 10%;
+        }
+    }
+
+    &-event-type{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        font-family: "Quicksand Medium";
+        font-size: 28px;
+        @include phone {
+            font-size: 16px;
+        }
+
+        &-img {
+            margin-right: 16px;
+            @include phone {
+                width: 30px;
+                height: 30px;
+                margin-right: 8px;
+            }
+        }
+
+        &-filtered:hover{
+            text-decoration: none;
+        }
+
+        &-filtered {
+            text-decoration: line-through;
+        }
+    }
+
+    &-event-type:hover{
+        text-decoration: line-through;
+        cursor: pointer;
+    }
+
+    &-selected:hover{
+        text-decoration: none;
+    }
+
+    &-selected{
+        text-decoration: line-through;
+    }
+
+    &-event-list-wrapper{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+
+}
+
