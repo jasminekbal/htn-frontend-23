@@ -40,5 +40,21 @@ I looked through the requirements and created an outline for how I'd like to dis
 I want to show all the detail from the API but hide some of it so it wasn't overwhelming. Thus I used an accordian style where most of the information was hidden initially. Still, I decided not to display the speakers as the fact that some speakers had images while others didn't would lead to a somewhat inconsistent design and I didn't think this information was as valuable to hackers as other information that the API provided.
 
 #### Development Process
+I started developing by going through my Figma page and creating + designing the various components. When styling the event component I created a dummy event object to use as a model instead of the starting with the API, then I fetched data from the API to create the list of events. Then I focused on managing the state to handle login, filtering and searching. 
+Things I'm proud of include the design, the state management using useReducer, and the fact that the site is fairly responsive.
+
+This is more of a design problem but a problem that I encountered after starting to develop was that I had planned to link to related events by scolling to them, but after implementing the filtering features I noticed that sometimes the the linked event wouldn't be on the screen so we couldn't scroll to it. For this iteration, I solved this problem by showing scollable events as a link and others as just text. This is because initially when the page loads, all events are visible so they are all scrollable. But as a long term solution, if I had more time, I would open non-scrollable events in a modal or separate tab.
+
+
+### Areas for Improvement
+* I would add tracking for metrics such as:
+  * how many users logged in vs were viewing just the public events
+  * how many logged in users prefered accessing the youtube link or the hopin event
+  * if users entered an event after filtering for it
+  * popular search terms -> could give us ideas on what topics users are interested in
+
+* Adding some kind of highlight or animation when the user scolls to a related event so they know which one to look at
+* Storing login state and liked events in local storage
+* allowing users to save their liked events to their personal calenders
 
 
