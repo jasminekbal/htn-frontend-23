@@ -132,6 +132,7 @@
         padding-right: 5%;
         text-align: left;
         font-size: 18px;
+        padding-bottom: 8px;
         @include phone {
             font-size: 14px;
         }
@@ -149,14 +150,18 @@
     }
 
     &-related-event-item:first-of-type{
+        display: inline;
         padding-left: 0;
         padding-right: 10px;
     }
 
     &-related-event-item{
-        text-decoration: underline;
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    &-related-event-item-link{
+        text-decoration: underline;
         cursor: pointer;
     }
 

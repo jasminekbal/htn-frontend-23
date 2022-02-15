@@ -50,6 +50,7 @@ function App() {
         return event
       })
 
+      //adding relevant information for related events
       for (var i = 0; i< events.length; i++){
         if (events[i].relatedEvents) {
           var relatedEvents = []
@@ -63,7 +64,7 @@ function App() {
         }
       }
 
-      events.sort((a, b)=>{ return a.start_time - b.start_time})
+      events.sort((a, b)=>{ return a.startTime - b.startTime})      
       dispatch({type: ACTIONS.UPDATE_ALL_EVENTS, payload:{eventList: events}})
     }
   } 

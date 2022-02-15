@@ -13,7 +13,7 @@ const Landing = ({state, dispatch}) => {
     const getEventsList = () => {
         const eventsList = state.eventsToDisplay.map((event, index) => {
         const canShowEvent = state.isLoggedIn || event.isPublic
-        return canShowEvent && <Event key={index} event={event} isLoggedIn={state.isLoggedIn} dispatch={dispatch}/> 
+        return canShowEvent && <Event key={index} event={event}  eventsDisplayed={state.eventsToDisplay} isLoggedIn={state.isLoggedIn} dispatch={dispatch}/> 
         })
         return eventsList
     }
