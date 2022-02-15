@@ -6,10 +6,10 @@ link to project [https://hackthenorth-22-challenge.netlify.app/](https://hackthe
 
 In the project directory, you can run:
 
-### `npm install` (and potentially `yarn install`)
+### `npm install` (and may need to run `yarn install`)
 To install the required dependencies
 
-### `npm start` (and potentially `yarn install`)
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
