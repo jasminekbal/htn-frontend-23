@@ -30,12 +30,14 @@ You may also see any lint errors in the console.
 * The user can view related events by clicking the link and the page will scroll to the related event
 * Filtering events by type
 * Searching for events
-* User can like events and view them separately
+* Like events to view them separately
 
 ### Design Decisions and Development Process
 
 #### Design Planning
-I looked through the requirements and created an outline for how I'd like to display the events through figma. Here is my design page for reference, [https://www.figma.com/file/PQ0NkYpVmuUpmMZzkvLpq6/HTN'22-Application?node-id=0%3A1](https://www.figma.com/file/PQ0NkYpVmuUpmMZzkvLpq6/HTN'22-Application?node-id=0%3A1). In terms of the colours, I wanted it feel warm/welcoming so I used yellow and pink and the main colours and added others to make it more fun and playful. 
+I looked through the requirements and created an outline for how I'd like to display the events through figma. Here is my design page for reference, [https://www.figma.com/file/PQ0NkYpVmuUpmMZzkvLpq6/HTN'22-Application?node-id=0%3A1](https://www.figma.com/file/PQ0NkYpVmuUpmMZzkvLpq6/HTN'22-Application?node-id=0%3A1). In terms of the colours, I wanted it feel warm/welcoming so I used yellow and pink as the main colours and added other colours to make it more fun and playful. 
+
+I want to show all the detail from the API but hide some of it so it wasn't overwhelming. Thus I used an accordian style where most of the information was hidden initially. Still, I decided not to display the speakers as the fact that some speakers had images while others didn't would lead to a somewhat inconsistent design and I didn't think this information was as valuable to hackers as other information that the API provided.
 
 #### Development Process
 
