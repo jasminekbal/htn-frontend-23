@@ -1,12 +1,15 @@
-# Getting Started with Create React App
+# Hack the North Frontend Challenge 2022
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+link to project [https://hackthenorth-22-challenge.netlify.app/](https://hackthenorth-22-challenge.netlify.app/)
 
-## Available Scripts
+## How to run it locally
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm install` (and potentially `yarn install`)
+To install the required dependencies
+
+### `npm start` (and potentially `yarn install`)
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,57 +17,26 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+## Write Up
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tools Used
+* React: I'm a huge React fan and love how easy it makes to manage state
+* Javascript
+* HTML/SCSS: SCCS since it allows us to define constants and can help reduce redundancy when styling similar components
 
-### `npm run build`
+### Features
+* Showing all events sorted by event start time
+* Hiding private events with a login screen
+* The user can view related events by clicking the link and the page will scroll to the related event
+* Filtering events by type
+* Searching for events
+* User can like events and view them separately
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Design Decisions and Development Process
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Design Planning
+I looked through the requirements and created an outline for how I'd like to display the events through figma. Here is my design page for reference, [https://www.figma.com/file/PQ0NkYpVmuUpmMZzkvLpq6/HTN'22-Application?node-id=0%3A1](https://www.figma.com/file/PQ0NkYpVmuUpmMZzkvLpq6/HTN'22-Application?node-id=0%3A1). In terms of the colours, I wanted it feel warm/welcoming so I used yellow and pink and the main colours and added others to make it more fun and playful. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Development Process
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
