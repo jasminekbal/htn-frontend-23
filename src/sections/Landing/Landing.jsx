@@ -9,6 +9,7 @@ import { ACTIONS, EVENT_TYPES } from "../../utils";
 
 const Landing = ({state, dispatch}) => {
 
+    //function to generate events list
     const getEventsList = () => {
         const eventsList = state.eventsToDisplay.map((event, index) => {
         const canShowEvent = state.isLoggedIn || event.isPublic
@@ -17,13 +18,17 @@ const Landing = ({state, dispatch}) => {
         return eventsList
     }
 
+    //setting classNames for dynamic styles
     let likedEventsBtnClassName = state.showingLikedEvents ? "filled-pink-btn" : "empty-pink-btn"
     let allEventsBtnClassName = state.showingAllEvents ? "filled-pink-btn" : "empty-pink-btn"
-    let techTalkClassName = state.filterOutTechTalk ? "landing-event-type landing-event-type-filtered" : "landing-event-type"
-    let activityClassName = state.filterOutActivity ? "landing-event-type landing-event-type-filtered" : "landing-event-type"
-    let workshopClassName = state.filterOutWorkshop ? "landing-event-type landing-event-type-filtered" : "landing-event-type"
+    let techTalkClassName = state.filterOutTechTalk ? "landing-event-type-filtered" : "landing-event-type"
+    let activityClassName = state.filterOutActivity ? "landing-event-type-filtered" : "landing-event-type"
+    let workshopClassName = state.filterOutWorkshop ? "landing-event-type-filtered" : "landing-event-type"
 
-
+    // wrapper functions around the reducer to help filter events
+    // note: in order to filter events, we first change the state to consider the changed filter state then filter 
+    // the events to display from the allEvents List, this was done so we can reuse a single filter function instead of creating a separate
+    // function for each change
     function showLikedEvents(){
         dispatch({type: ACTIONS.SHOW_LIKED_EVENTS})
         dispatch({type: ACTIONS.FILTER})

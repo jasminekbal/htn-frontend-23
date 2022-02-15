@@ -18,6 +18,11 @@ export const ACTIONS = {
     WORKSHOP: "workshop"
   }
   
+  // function for formatting unix date-time from ms to a local string
+  export function formatDateTime(unixTimeStamp){
+    const dateObject = new Date(unixTimeStamp)
+    return dateObject.toLocaleString()
+}
 
   // functions to help filter events in various ways
   function didPassEventTypeFilters(state, event) {

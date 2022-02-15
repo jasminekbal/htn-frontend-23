@@ -67,24 +67,26 @@
 
         &-filtered:hover{
             text-decoration: none;
+            cursor: pointer;
         }
 
         &-filtered {
             text-decoration: line-through;
-        }
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            font-family: "Quicksand Medium";
+            font-size: 28px;
+            @include phone {
+                font-size: 16px;
+            }
+            }
     }
 
     &-event-type:hover{
         text-decoration: line-through;
         cursor: pointer;
-    }
-
-    &-selected:hover{
-        text-decoration: none;
-    }
-
-    &-selected{
-        text-decoration: line-through;
     }
 
     &-event-list-wrapper{

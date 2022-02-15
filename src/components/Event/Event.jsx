@@ -8,20 +8,15 @@ import heartEmpty from "../../resources/images/heartEmpty.svg"
 import youtube from "../../resources/images/youtube.svg"
 import calender from "../../resources/images/calender.svg"
 import {Link} from 'react-scroll'
-import { ACTIONS, EVENT_TYPES } from "../../utils";
-
-
-
-function formatDateTime(unixTimeStamp){
-    const dateObject = new Date(unixTimeStamp)
-    return dateObject.toLocaleString()
-}
+import { ACTIONS, EVENT_TYPES, formatDateTime } from "../../utils";
 
 const Event = ({event, isLoggedIn, dispatch}) => {
     var [showMoreInfo, setShowMoreInfo] = useState(false);
 
+    // function to create the list of related events
     const getRelatedEvents = () => {
         const relatedEvents = event.relatedEvents.map((event, index) => {
+            // if the user isn't logged in we don't want them to see private events in related events either
             const canShowEventName = isLoggedIn || event.isPublic
           const eventName = (
             <Link className="event-related-event-item" to={`${event.id}`} spy={true}
@@ -38,14 +33,27 @@ const Event = ({event, isLoggedIn, dispatch}) => {
     const getEventImage = () => {
         switch (event.type){
             case EVENT_TYPES.ACTIVITY:
-                return <img src={activity} alt="" className="event-type-icon"/>
+                return activity
             case EVENT_TYPES.WORKSHOP:
-                return <img src={workshop}alt="" className="event-type-icon"/>
+                return workshop
             case EVENT_TYPES.TECH_TALK:
-                return <img src={techTalk} alt="" className="event-type-icon"/>
+                return techTalk
             default:
                 return <></>
         } 
+    }
+
+    const getHeartImage = () => {
+        if (event.liked) {
+            return heartFull
+        } else {
+            return heartEmpty
+        }
+    }
+
+    const toggleLike = () => {
+        dispatch({type: ACTIONS.TOGGLE_LIKED, payload:{id: event.id}})
+        dispatch({type: ACTIONS.FILTER})
     }
 
     return (
@@ -53,20 +61,17 @@ const Event = ({event, isLoggedIn, dispatch}) => {
 
             <div className="event-header-info-wrapper">
                 <div className="event-name-icon-wrapper">
-                    {getEventImage()}
-
+                    <img src={getEventImage()} alt="" className="event-type-icon"/>
                     <div className="event-name-date-wrapper">
                         <h4 className="event-name">{event.name}</h4>
                         <p className="event-date-time">{formatDateTime(event.startTime)} - {formatDateTime(event.endTime)}</p>
                     </div>
                 </div>
             
-                {event.liked && isLoggedIn ? <img onClick={() => dispatch({type: ACTIONS.TOGGLE_LIKED, payload:{id: event.id}}) } src={heartFull} alt="" className="event-heart"/>:
-                isLoggedIn && <img src={heartEmpty} alt="" onClick={() => dispatch({type: ACTIONS.TOGGLE_LIKED, payload:{id: event.id}}) } className="event-heart"/>}
+                {isLoggedIn && <img onClick={() => toggleLike() } src={getHeartImage()} alt="" className="event-heart"/>}
             </div>
 
             <div className="event-links">
-                
                { event.isPublic && <a target="_blank" rel="noreferrer" className="event-link" href={`${event.youtubeLink}`}>
                     <img src={youtube} alt="" className="event-link-image"/>
                     Youtube Link
@@ -93,8 +98,6 @@ const Event = ({event, isLoggedIn, dispatch}) => {
                 </div>
                 {getRelatedEvents()}</div>}
             </div>}
-
-            
             
         </div>
     )

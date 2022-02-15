@@ -68,9 +68,6 @@ function App() {
     }
   } 
 
- 
-
-
   return (
     <div className="App">
       <NavBar isLoggedIn={state.isLoggedIn} dispatch={dispatch}/>
