@@ -1,6 +1,6 @@
-# Hack the North Frontend Challenge 2022
+# Hack the North Frontend Challenge 2023
 
-link to project [https://hackthenorth-22-challenge.netlify.app/](https://hackthenorth-22-challenge.netlify.app/)
+link to project [https://hackthenorth-frontend-challenge.netlify.app/](https://hackthenorth-frontend-challenge.netlify.app/)
 
 ## How to run it locally
 
